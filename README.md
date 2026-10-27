@@ -157,62 +157,9 @@ npm run lint --workspace=Travel_Ease_Frontend
 npm run test --workspace=Travel_Ease_Frontend
 ```
 
-### Environment Variables
-
-Use the root [`env.example`](./env.example) as the master reference, then configure the frontend and backend workspace files separately.
-
-#### `Travel_Ease_Backend/.env`
-
-```env
-DATABASE_URL=postgresql://username:password@localhost:5432/travelease_db
-DIRECT_URL=postgresql://username:password@localhost:5432/travelease_db
-PORT=3001
-NODE_ENV=development
-
-SUPABASE_URL=https://fdrbqgoeldzocifluxcw.supabase.co
-SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-SUPABASE_STORAGE_BUCKET=images
-
-JWT_SECRET=
-ALLOWED_ORIGINS=http://localhost:5173
-FRONTEND_URL=http://localhost:5173
-
-REDIS_ENABLED=false
-REDIS_URL=redis://localhost:6379/0
-
-MAP_PROVIDER=nominatim
-NOMINATIM_BASE_URL=https://nominatim.openstreetmap.org
-OSRM_BASE_URL=https://router.project-osrm.org
-```
-
-#### `Travel_Ease_Frontend/.env.local`
-
-```env
-VITE_API_BASE_URL=/api
-VITE_SUPABASE_URL=https://fdrbqgoeldzocifluxcw.supabase.co
-VITE_SUPABASE_ANON_KEY=
-VITE_ORS_API_KEY=
-VITE_ENABLE_EDITOR=false
-
-# Vercel server-side environment variable for production only
-BACKEND_URL=https://travel-ease-backend-production-d047.up.railway.app
-```
-
-> **Note:** Do not commit real environment files or service credentials to version control.
-
----
-
-<a id="test-credentials--access-roles"></a>
-## 🔐 Test Credentials / Access Roles
-
 > [!WARNING]
 > **⚠️ SECURITY WARNING:** The accounts below are for testing, QA, demonstration, and evaluation only. Rotate these credentials immediately in any real deployment, never reuse them in production, and restrict access to authorized reviewers.
 
-| Role | Name | Email | Password | Access Level |
-| --- | --- | --- | --- | --- |
-| SUPER ADMIN | Vaughn Joshua | `stonks.vaughn@gmail.com` | `pass123` | Full system access |
-| LGU ADMIN | TravelEase LGU Admin | `travelease759@gmail.com` | `pass123` | Local Government Unit administrative access |
 
 ### Role-Based Access Notes
 
@@ -222,24 +169,6 @@ BACKEND_URL=https://travel-ease-backend-production-d047.up.railway.app
 - Limit distribution of demo credentials to approved testers and evaluators only.
 
 ---
-
-<a id="user-roles--permissions"></a>
-## 👥 User Roles & Permissions
-
-TravelEase supports multiple application roles internally. The matrix below focuses on the two administrative demo roles documented in this README.
-
-| Capability | SUPER ADMIN | LGU ADMIN | Notes |
-| --- | --- | --- | --- |
-| Sign in to the platform | ✅ | ✅ | Standard authenticated access |
-| Access account details, notifications, favorites, and profile tools | ✅ | ✅ | Shared authenticated features |
-| Access business management features | ✅ | ✅ | Includes business-related management screens available to the user |
-| View pending business registrations | ✅ | ✅ | Restricted to admin roles |
-| Approve or reject pending business registrations | ✅ | ✅ | Used for LGU review workflows |
-| Access business registration moderation tab | ✅ | ✅ | Available in the profile area |
-| View all registered users | ✅ | ❌ | `SUPER_ADMIN` only |
-| Change user roles | ✅ | ❌ | `SUPER_ADMIN` only |
-| Access the admin panel | ✅ | ❌ | `SUPER_ADMIN` only |
-| Run system operations such as traffic snapshot generation | ✅ | ❌ | `SUPER_ADMIN` only |
 
 ### Administrative Distinctions
 
