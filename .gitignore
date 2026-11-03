@@ -96,3 +96,6 @@ temp/
 # Prisma
 # Note: migrations/ should be tracked for consistent deployments
 
+
+# Stray local upload artifacts (images are stored in Supabase Storage)
+uploads/
